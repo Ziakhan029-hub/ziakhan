@@ -57,7 +57,7 @@
     /* ── أول ثانوي 2026 · الفصل الثاني · الأشكال الهندسية ── */
     {t:'القطعة المتوسطة لشبه المنحرف',           g:'trapezoid',     s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'١٤:٢٠'},
     {t:'شبه المنحرف متطابق الساقين',              g:'trapezoid',     s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'١١:٥٢'},
-    {t:'الشروط الكافية للمعيّن',                  g:'rhombus',       s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'٠٩:٤٥'},
+    {t:'الشروط الكافية للمعيّن',                  g:'rhombus',       s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'٠٩:٤٥', href:'lesson-shurut-muayyan.html'},
     {t:'المربع: حالة خاصة من المستطيل والمعيّن',  g:'square',        s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'١٣:١٠'},
     {t:'المعيّن: حالة خاصة من متوازي الأضلاع',   g:'rhombus',       s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'١٢:٣٨'},
     {t:'خصائص المستطيل',                          g:'rect',          s:'geo',    lvl:'أول ثانوي 2026', term:'الفصل الثاني', ago:'منذ ٣ أيام', dur:'١٠:٢٢'},
@@ -123,7 +123,7 @@
     const gradeUrl   = 'category.html?grade=' + encodeURIComponent(L.lvl);
     const subjectUrl = 'category.html?subject=' + L.s;
     const stopNav    = "event.stopPropagation();event.preventDefault();";
-    return `<a class="lesson" href="lesson.html" style="--ccol:var(--${L.s}); --tc1:${tc1}; --tc2:${tc2}; --gcol:${gcol}">
+    return `<a class="lesson" href="${L.href || 'lesson.html'}" style="--ccol:var(--${L.s}); --tc1:${tc1}; --tc2:${tc2}; --gcol:${gcol}">
       <div class="thumb">
         <div class="paper"></div>
         <div class="glyph">${GLYPH[L.g] || GLYPH.triangle}</div>
