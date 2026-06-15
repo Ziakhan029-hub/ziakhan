@@ -26,11 +26,11 @@
       <img src="assets/logo-white.png" alt="أكاديمية موسى">
     </a>
     <nav class="mainnav">
-      <a href="category.html">الرياضيات</a>
-      <a href="category.html">الهندسة</a>
-      <a href="category.html">الفيزياء</a>
-      <a href="category.html">الدورات الاحترافية</a>
-      <a href="category.html">اختبار التحصيلي</a>
+      <a href="category.html?subject=math">الرياضيات</a>
+      <a href="category.html?subject=geo">الهندسة</a>
+      <a href="category.html?subject=phys">الفيزياء</a>
+      <a href="category.html?subject=pro">الدورات الاحترافية</a>
+      <a href="category.html?subject=tahsili">اختبار التحصيلي</a>
       <a href="#courses" class="has-dot">المحتوى المدفوع</a>
     </nav>
     <div class="header-spacer"></div>
@@ -169,11 +169,11 @@
       </div>
     </div>
     <div class="subjects">
-      <a class="subj" href="category.html" style="--ccol:var(--math)"><span class="dot"></span> الرياضيات <span class="cnt">640 درساً</span></a>
-      <a class="subj" href="category.html" style="--ccol:var(--geo)"><span class="dot"></span> الهندسة <span class="cnt">218 درساً</span></a>
-      <a class="subj" href="category.html" style="--ccol:var(--phys)"><span class="dot"></span> الفيزياء <span class="cnt">174 درساً</span></a>
-      <a class="subj" href="category.html" style="--ccol:var(--pro)"><span class="dot"></span> الدورات الاحترافية <span class="cnt">36 دورة</span></a>
-      <a class="subj" href="category.html" style="--ccol:var(--tahsili)"><span class="dot"></span> اختبار التحصيلي <span class="cnt">132 درساً</span></a>
+      <a class="subj" href="category.html?subject=math" style="--ccol:var(--math)"><span class="dot"></span> الرياضيات <span class="cnt">640 درساً</span></a>
+      <a class="subj" href="category.html?subject=geo" style="--ccol:var(--geo)"><span class="dot"></span> الهندسة <span class="cnt">218 درساً</span></a>
+      <a class="subj" href="category.html?subject=phys" style="--ccol:var(--phys)"><span class="dot"></span> الفيزياء <span class="cnt">174 درساً</span></a>
+      <a class="subj" href="category.html?subject=pro" style="--ccol:var(--pro)"><span class="dot"></span> الدورات الاحترافية <span class="cnt">36 دورة</span></a>
+      <a class="subj" href="category.html?subject=tahsili" style="--ccol:var(--tahsili)"><span class="dot"></span> اختبار التحصيلي <span class="cnt">132 درساً</span></a>
     </div>
   </div>
 </section>
@@ -190,6 +190,7 @@
       <a class="sec-link" href="category.html">عرض كل الدروس
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
       </a>
+
     </div>
     <div class="lesson-grid" id="latest-grid"><!-- injected --></div>
   </div>
@@ -203,6 +204,9 @@
         <div class="eyebrow">حسب المرحلة الدراسية</div>
         <h2>دروس من جميع المراحل</h2>
       </div>
+      <a class="sec-link" id="grade-viewall" href="category.html">عرض كل الدروس
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      </a>
     </div>
     <div class="grade-tabs" role="tablist">
       <button class="gtab active" data-grade="أول ثانوي 2026"    style="--gcol:#0EA88C" role="tab">أول ثانوي 2026</button>
@@ -415,11 +419,13 @@
   })();
   // render grade-level tabs section
   (function(){
-    const grid = document.getElementById('grades-grid');
+    const grid    = document.getElementById('grades-grid');
+    const viewAll = document.getElementById('grade-viewall');
     if(!grid || !window.LESSONS) return;
     function render(grade){
       const lessons = window.LESSONS.filter(function(l){ return l.lvl===grade; });
       grid.innerHTML = lessons.map(window.lessonCard).join('');
+      if(viewAll) viewAll.href = 'category.html?grade=' + encodeURIComponent(grade);
     }
     document.querySelectorAll('.gtab').forEach(function(btn){
       btn.addEventListener('click', function(){

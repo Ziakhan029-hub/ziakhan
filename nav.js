@@ -37,11 +37,11 @@
         <button class="drawer-close" data-close aria-label="إغلاق">${I.close}</button>
       </div>
       <nav class="drawer-nav">
-        <a href="category.html">${I.book}الرياضيات</a>
-        <a href="category.html">${I.compass}الهندسة</a>
-        <a href="category.html">${I.atom}الفيزياء</a>
-        <a href="category.html">${I.award}الدورات الاحترافية</a>
-        <a href="category.html">${I.target}اختبار التحصيلي</a>
+        <a href="category.html?subject=math">${I.book}الرياضيات</a>
+        <a href="category.html?subject=geo">${I.compass}الهندسة</a>
+        <a href="category.html?subject=phys">${I.atom}الفيزياء</a>
+        <a href="category.html?subject=pro">${I.award}الدورات الاحترافية</a>
+        <a href="category.html?subject=tahsili">${I.target}اختبار التحصيلي</a>
         <a class="paid" href="index.html#courses">${I.crown}المحتوى المدفوع</a>
       </nav>
       <div class="drawer-cta">
@@ -76,7 +76,7 @@
       <a class="bn-item${isHome?' active':''}" href="index.html">${I.home}<span>الرئيسية</span></a>
       <a class="bn-item${isCat?' active':''}" href="category.html">${I.grid}<span>المواد</span></a>
       <div class="bn-fab"><button data-search aria-label="بحث">${I.search}</button></div>
-      <a class="bn-item" href="category.html">${I.target}<span>التحصيلي</span></a>
+      <a class="bn-item" href="category.html?subject=tahsili">${I.target}<span>التحصيلي</span></a>
       <button class="bn-item" data-menu>${I.menu}<span>المزيد</span></button>
     </nav>`;
   body.appendChild(wrap);

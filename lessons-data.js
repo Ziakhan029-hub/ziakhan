@@ -115,21 +115,28 @@
   ];
 
   window.lessonCard = function(L){
-    const pair = PAIRS[L.s] || PAIRS.math;
-    const gcol = GRADE_COL[L.lvl] || pair[0];
-    const gp   = GRADE_PAIRS[L.lvl];
-    const tc1  = gp ? gp[0] : pair[0];
-    const tc2  = gp ? gp[1] : pair[1];
+    const pair       = PAIRS[L.s] || PAIRS.math;
+    const gcol       = GRADE_COL[L.lvl] || pair[0];
+    const gp         = GRADE_PAIRS[L.lvl];
+    const tc1        = gp ? gp[0] : pair[0];
+    const tc2        = gp ? gp[1] : pair[1];
+    const gradeUrl   = 'category.html?grade=' + encodeURIComponent(L.lvl);
+    const subjectUrl = 'category.html?subject=' + L.s;
+    const stopNav    = "event.stopPropagation();event.preventDefault();";
     return `<a class="lesson" href="lesson.html" style="--ccol:var(--${L.s}); --tc1:${tc1}; --tc2:${tc2}; --gcol:${gcol}">
       <div class="thumb">
         <div class="paper"></div>
         <div class="glyph">${GLYPH[L.g] || GLYPH.triangle}</div>
-        <div class="badge">${SUBJ[L.s] || ''}</div>
+        <span class="badge" onclick="${stopNav}location.href='${subjectUrl}'" style="cursor:pointer" title="عرض كل دروس ${SUBJ[L.s]||''}">${SUBJ[L.s] || ''}</span>
         <div class="lvl">${L.dur}</div>
         <div class="play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="body">
-        <div class="tag"><span class="dot"></span>${L.lvl} · ${L.term}</div>
+        <div class="tag">
+          <span class="dot"></span>
+          <span onclick="${stopNav}location.href='${gradeUrl}'" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px" title="عرض كل دروس ${L.lvl}">${L.lvl}</span>
+           · ${L.term}
+        </div>
         <h3>${L.t}</h3>
         <div class="meta">
           <span class="m"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>${L.ago}</span>
