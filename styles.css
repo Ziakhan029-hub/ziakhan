@@ -7,11 +7,11 @@
 
 :root{
   --ink:#0A1518; --ink-2:#0F2228; --ink-soft:#16323A;
-  --primary:#11B5A0; --primary-deep:#0C8C7C; --primary-soft:#D6F2ED; --primary-glow:rgba(17,181,160,.32);
+  --primary:#F97316; --primary-deep:#EA6000; --primary-soft:#FEF0E6; --primary-glow:rgba(249,115,22,.32);
   --gold:#E0A24C; --gold-deep:#C8862E; --gold-soft:#FBEFD9;
   --bg:#F4F7F7; --bg-2:#EAF0F0; --surface:#FFFFFF;
   --text:#0E1B1F; --text-2:#3E5359; --muted:#6E8085; --line:#E2EAEA; --line-2:#D2DEDE;
-  --math:#11B5A0; --geo:#5B7CFA; --phys:#E0653C; --pro:#8B5CF6; --tahsili:#E0A24C;
+  --math:#F97316; --geo:#5B7CFA; --phys:#E0653C; --pro:#8B5CF6; --tahsili:#E0A24C;
   --radius:18px; --radius-sm:12px; --radius-lg:26px;
   --shadow-sm:0 1px 2px rgba(10,30,35,.05),0 2px 8px rgba(10,30,35,.04);
   --shadow:0 4px 14px rgba(10,30,35,.07),0 18px 40px -22px rgba(10,30,35,.18);
@@ -440,8 +440,8 @@ section.block{ padding:44px 0; }
 
 /* SVG quadrilateral internals */
 #quadSvg #gridLayer line{ stroke:var(--line); stroke-width:1; }
-#quadFill{ fill:rgba(17,181,160,.10); stroke:#11B5A0; stroke-width:2.5; stroke-linejoin:round; }
-#diagLayer line{ stroke:rgba(17,181,160,.28); stroke-width:1.5; stroke-dasharray:6 4; }
+#quadFill{ fill:rgba(249,115,22,.10); stroke:#F97316; stroke-width:2.5; stroke-linejoin:round; }
+#diagLayer line{ stroke:rgba(249,115,22,.28); stroke-width:1.5; stroke-dasharray:6 4; }
 .ix-rod rect{ transition:width .05s; }
 .ix-joint circle{ filter:drop-shadow(0 2px 4px rgba(0,0,0,.25)); transition:r .1s; }
 .ix-joint:hover circle{ filter:drop-shadow(0 3px 8px rgba(0,0,0,.35)); }
