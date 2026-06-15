@@ -626,8 +626,8 @@ MathJax = {
           var large=Math.abs(sweepAng)>Math.PI?1:0,sweepFlag=sweepAng>0?1:0;
           var path=document.createElementNS(NS,'path');
           path.setAttribute('d','M '+p[0]+' '+p[1]+' L '+x1+' '+y1+' A '+r+' '+r+' 0 '+large+' '+sweepFlag+' '+x2+' '+y2+' Z');
-          path.setAttribute('fill',reflex?'rgba(192,48,36,.16)':'rgba(249,115,22,.18)');
-          path.setAttribute('stroke',reflex?'#c03024':'#F97316');path.setAttribute('stroke-width','1.5');
+          path.setAttribute('fill',reflex?'rgba(192,48,36,.16)':'rgba(107,114,128,.18)');
+          path.setAttribute('stroke',reflex?'#c03024':'#6B7280');path.setAttribute('stroke-width','1.5');
           angleLayer.appendChild(path);
           var bis=start+sweepAng/2,tr=r+16;
           var t=document.createElementNS(NS,'text');
